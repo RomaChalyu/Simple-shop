@@ -1,0 +1,112 @@
+@import '../../styles/global.scss';
+
+//mixin
+@mixin iconImage($url){
+  display: block;
+  background: url($url) no-repeat;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+}
+
+.footer{
+  width: 100%;
+  background: $colorMain;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .content__wrapper{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .footer__text{
+    cursor: pointer;
+  }
+
+
+  .footer__social-networks{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .social-networks__text{
+      margin-right: 20px;
+    }
+
+    .link-social-networks__wrapper{
+      display: flex;
+    }
+
+    .instagram{
+      @include iconImage('../../images/instagram.png');
+      @include iconSizes(30px, 10px);
+    }
+
+    .YouTube{
+      @include iconImage('../../images/YouTube.png');
+      @include iconSizes(30px, 10px);
+    }
+
+    .facebook{
+      @include iconImage('../../images/facebook.png');
+      @include iconSizes(30px, 10px);
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+
+  .footer{
+
+    .footer__social-networks{
+      padding: 0 0 10px 0;
+      margin-top: -10px;
+        
+      .instagram{
+        @include iconSizes(20px, 10px);
+      }
+          
+      .YouTube{
+        @include iconSizes(20px, 10px);
+      }
+          
+      .facebook{
+        @include iconSizes(20px, 10px);
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+
+  .footer{
+    
+    h4{
+      font-size: 14px;
+    }
+
+    .content__wrapper{
+      padding: 10px 0;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer__text{
+      font-size: 14px;
+    }
+
+    .footer__social-networks{
+      flex-direction: column;
+
+      .social-networks__text{
+        margin-right: 0;
+        font-size: 15px;
+      }
+    } 
+  }
+}
